@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
 import styles from "./DataEntry.module.css";
+import numeral from "numeral";
+import { NUMERAL_FORMAT } from "../../constants";
 
 export class DataEntry extends PureComponent {
     constructor(props) {
@@ -30,7 +32,7 @@ export class DataEntry extends PureComponent {
                 </div>
                 <div className={styles.amount}>
                     <span className={styles.currency}>{entry.currency}</span>
-                    <span className={styles.number}>{entry.amount}</span>
+                    <span className={styles.number}>{numeral(entry.amount).format(NUMERAL_FORMAT)}</span>
                 </div>
             </div>
         );

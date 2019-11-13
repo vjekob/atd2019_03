@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import numeral from "numeral";
+import { NUMERAL_FORMAT } from "../../constants";
 
 export class SummaryEntry extends Component {
     render() {
@@ -9,7 +11,7 @@ export class SummaryEntry extends Component {
         return (
             <tr>
                 <td>{currency}</td>
-                <td>{amount}</td>
+                <td>{numeral(amount).format(NUMERAL_FORMAT)}</td>
             </tr>
         );
     }
