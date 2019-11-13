@@ -10,12 +10,19 @@ export class DataEntry extends PureComponent {
         };
     }
 
+    _toggle() {
+        const { entry, toggleSelection } = this.props;
+        const { selected } = this.state;
+        this.setState({ selected: !selected });
+        toggleSelection(entry);
+    }
+
     render() {
         const { entry } = this.props;
         return (
             <div
                 className={`${styles.entry} ${this.state.selected ? styles.selected : ""}`}
-                onClick={() => this.setState({ selected: !this.state.selected })}>
+                onClick={this._toggle.bind(this)}>
                 <div className={styles.date}>{entry.documentDate}</div>
                 <div className={styles.customer}>
                     <div className={styles.no}>{entry.customerNo}</div>
