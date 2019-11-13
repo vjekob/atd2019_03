@@ -1,4 +1,4 @@
-[
+const SEND_DATA = [
     {
         "entryNo": 2433,
         "customerNo": "30000",
@@ -413,4 +413,4 @@
         "amount": 861.13,
         "currency": ""
     }
-]
+];
