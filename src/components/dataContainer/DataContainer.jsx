@@ -4,14 +4,13 @@ import { DataEntry } from "../dataEntry/DataEntry";
 
 export class DataContainer extends PureComponent {
     render() {
-        const { data, toggleSelection } = this.props;
+        const { data } = this.props;
         return (
             <div className={styles.data}>
                 {
                     data.map(entry => (
                         <DataEntry
                             entry={entry}
-                            toggleSelection={toggleSelection}
                             key={entry.entryNo} />
                     ))
                 }
