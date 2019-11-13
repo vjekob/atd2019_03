@@ -2,10 +2,20 @@ import React, { PureComponent } from "react";
 import styles from "./DataEntry.module.css";
 
 export class DataEntry extends PureComponent {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            selected: false
+        };
+    }
+
     render() {
         const { entry } = this.props;
         return (
-            <div className={styles.entry}>
+            <div
+                className={`${styles.entry} ${this.state.selected ? styles.selected : ""}`}
+                onClick={() => this.setState({ selected: !this.state.selected })}>
                 <div className={styles.date}>{entry.documentDate}</div>
                 <div className={styles.customer}>
                     <div className={styles.no}>{entry.customerNo}</div>
