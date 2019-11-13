@@ -5,9 +5,14 @@ import { View } from "./components/view/View";
 import demoData from "./.demo.data.json";
 
 class App extends Component {
+  componentDidMount() {
+    // Simulates AL invoking JavaScript
+    window.SendData(demoData);
+  }
+
   render() {
     return (
-      <View data={demoData} />
+      <View />
     );
   }
 }
